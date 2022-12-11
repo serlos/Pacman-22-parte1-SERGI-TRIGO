@@ -33,7 +33,7 @@ void Setup()
 		}
 
 	}
-	map[11][0] = TILES::EMPTY;
+	map[11][0] = TILES::EMPTY; //hacemos huecos en el mapa 
 	map[12][0] = TILES::EMPTY;
 	map[13][0] = TILES::EMPTY;
 	map[14][0] = TILES::EMPTY;
@@ -42,6 +42,17 @@ void Setup()
 	map[12][MAP_HORIZONTAL - 1] = TILES::EMPTY;
 	map[13][MAP_HORIZONTAL - 1] = TILES::EMPTY;
 	map[14][MAP_HORIZONTAL - 1] = TILES::EMPTY;
+
+	map[0][59] = TILES::EMPTY;
+	map[0][60] = TILES::EMPTY;
+	map[0][61] = TILES::EMPTY;
+	map[0][62] = TILES::EMPTY;
+
+	map[MAP_VERTICAL - 1][59] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][60] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][61] = TILES::EMPTY;
+	map[MAP_VERTICAL - 1][62] = TILES::EMPTY;
+	;
 
 }
 
@@ -100,6 +111,18 @@ void Logic()
 		break;
 	
 	}
+	if (personaje_x_new < 0) // antes de comprobar la colision, colocamos este if para que el personaje aparezca por el otro lado
+	{
+		personaje_x_new = MAP_HORIZONTAL - 1;
+	}
+	personaje_x_new = personaje_x_new % MAP_HORIZONTAL;
+	
+	if (personaje_y_new < 0) 
+	{
+		personaje_y_new = MAP_VERTICAL - 1;
+	}
+	personaje_y_new = personaje_y_new % MAP_VERTICAL;
+
 	if (map[personaje_y_new][personaje_x_new] != TILES::WALL) //comprobamos que la posicion sea valida
 	{
 		personaje_y = personaje_y_new;
