@@ -21,7 +21,7 @@ void Setup()
 { 
 	personaje_x = MAP_HORIZONTAL / 2;
 	personaje_y = MAP_VERTICAL / 2;
-	for (size_t i = 0; i < 29; i++)   //vemos el alto de la pantalla de la consola
+	for (size_t i = 0; i < 29; i++)   //vemos el alto de la pantalla de la consola / me relleno el mapa
 	{
 		for (size_t j = 0; j < 120; j++)   //vemos el ancho de la pantalla de la consola
 		{
@@ -62,8 +62,18 @@ void Setup()
 	map[MAP_VERTICAL - 1][60] = TILES::EMPTY;
 	map[MAP_VERTICAL - 1][61] = TILES::EMPTY;
 	map[MAP_VERTICAL - 1][62] = TILES::EMPTY;
-	
-	std::cout << "hola";
+
+	for (size_t i = 0; i < 29; i++)   //compruebo cuantos puntos tengo en el mapa y me dice mi puntuacion total
+	{
+		for (size_t j = 0; j < 120; j++)   
+		{
+			if (map[i][j] == TILES::POINT)
+			{
+				puntuacion_total++;
+			}
+		}
+
+	}
 
 }
 
@@ -150,7 +160,7 @@ void Logic()
 
 void Draw()
 {
-	system("CLS"); //ponemos una funciond e WINDOWS clean screen para q se vea aceptable
+	system("CLS"); //ponemos una funcion de WINDOWS clean screen para q se vea aceptable
 	for (size_t i = 0; i < 29; i++)   //imprimimos esa memoria para imprimirla por pantalla
 	{
 		for (size_t j = 0; j < 120; j++)
@@ -166,6 +176,7 @@ void Draw()
 		}
 		std::cout << std::endl;
 	}
+	std::cout << puntuacion_actual << '/' << puntuacion_total;
 }
 
 int main() 
