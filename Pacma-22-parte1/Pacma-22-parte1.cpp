@@ -33,19 +33,16 @@ void Setup()
 		}
 
 	}
-
 	map[11][0] = TILES::EMPTY;
 	map[12][0] = TILES::EMPTY;
 	map[13][0] = TILES::EMPTY;
 	map[14][0] = TILES::EMPTY;
 
-	map[11][MAP_HORIZONTAL-1] = TILES::EMPTY;
-	map[12][MAP_HORIZONTAL-1] = TILES::EMPTY;
-	map[13][MAP_HORIZONTAL-1] = TILES::EMPTY;
-	map[14][MAP_HORIZONTAL-1] = TILES::EMPTY;
-	
+	map[11][MAP_HORIZONTAL - 1] = TILES::EMPTY;
+	map[12][MAP_HORIZONTAL - 1] = TILES::EMPTY;
+	map[13][MAP_HORIZONTAL - 1] = TILES::EMPTY;
+	map[14][MAP_HORIZONTAL - 1] = TILES::EMPTY;
 
-	
 }
 
 void Input()
