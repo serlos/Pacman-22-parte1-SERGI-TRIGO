@@ -22,7 +22,8 @@ void Setup()
 			}
 			else
 			{
-				map[i][j] = TILES::EMPTY;
+				map[i][j] = TILES::EMPTY; //prueba
+
 			}
 		}
 
